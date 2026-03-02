@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client = Anthropic()
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://sql-frontend-theta.vercel.app"])
 
 SYSTEM_PROMPTS = {
     "explain": "You are a SQL expert. Explain SQL queries in simple plain English. Break down each clause clearly. Do not repeat any menu options or unrelated content.",
