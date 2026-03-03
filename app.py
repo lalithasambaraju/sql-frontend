@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-client = Anthropic()
+api_key = os.getenv("ANTHROPIC_API_KEY")
+client = Anthropic(api_key=api_key)
 app = Flask(__name__)
 CORS(app, origins=["https://sql-frontend-theta.vercel.app"])
 
